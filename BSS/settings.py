@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'Transaction.apps.TransactionConfig',
     'Company.apps.CompanyConfig',
     'Billing.apps.BillingConfig',
-    'BatteryModel.apps.BatterymodelConfig'
+    'BatteryModel.apps.BatterymodelConfig',
+    'home.apps.HomeConfig'
 
 ]
 
