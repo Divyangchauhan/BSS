@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center mb-3">Battery List</h1>
+{% if battery_list%} {% for battery in battery_list %}
+<div class="card mb-3">
+    <div class="card-body">
+        <p class="lead">{{Battery.battery_SN}}</p>
+    </div>
+</div>
+{% endfor %} {% else %} NO Battery Data Available {% endif %} {% endblock %}
