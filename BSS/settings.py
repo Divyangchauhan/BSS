@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'Company.apps.CompanyConfig',
     'Billing.apps.BillingConfig',
     'BatteryModel.apps.BatterymodelConfig',
-    'home.apps.HomeConfig'
+    'home.apps.HomeConfig',
+    'Charger.apps.ChargerConfig'
 
 ]
 

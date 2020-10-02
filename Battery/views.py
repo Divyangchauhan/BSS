@@ -15,3 +15,9 @@ def battery_list(request):
     context = {'battery_list': battery_list}
     return render(request, 'battery/batteryList.html', context)
     # return HttpResponse(output)
+
+
+def battery_detail(request, battery_SN):
+    battery = Battery.objects.get(battery_SN=battery_SN)
+    context = {'battery': battery}
+    return render(request, 'battery/batteryDetail.html', context)

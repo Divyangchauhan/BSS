@@ -1,9 +1,16 @@
 from django.db import models
 from Battery.models import Battery
 from Station.models import Station
-
+from Charger.models import Charger
 
 # Create your models here.
+
+
+def ChargeRate(transaction):
+    chargingrate = 1
+    print(transaction)
+    return chargingrate
+
 
 class Transaction(models.Model):
     transaction_start_time = models.DateTimeField()
@@ -13,6 +20,7 @@ class Transaction(models.Model):
         Battery, on_delete=models.CASCADE)
     Station = models.ForeignKey(
         Station, on_delete=models.CASCADE)
+    Charger = models.ForeignKey(Charger, on_delete=models.RESTRICT)
     battery_state_in = models.IntegerField()
     battery_state_out = models.IntegerField()
 
@@ -22,9 +30,7 @@ class Transaction(models.Model):
 
     @property
     def transaction_amount(self):
-        return self.battery_charged(self)*ChargeRate()
+        return self.battery_charged*ChargeRate(self)
 
-
-def ChargeRate():
-    chargingrate = 1
-    return chargingrate
+    def __str__(self):
+        return str(self.id)

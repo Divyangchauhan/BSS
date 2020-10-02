@@ -12,7 +12,7 @@
 
 </div>
 
-{% if battery_list%}
+{% if transaction_list%}
 
 <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -20,34 +20,37 @@
         <!-- DataTales  -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Batteries</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Transactions</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Serial Number</th>
-                      <th>Model Number</th>
-                      <th>Owner</th>
-                      <th>Status</th>
+                      <th>Transaction ID</th>
+                      <th>Battery ID</th>
+                      <th>Charging Station</th>
+                      <th>Battery Charged</th>
+                      <th>Transaction Amount</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Serial Number</th>
-                      <th>Model Number</th>
-                      <th>Owner</th>
-                      <th>Status</th>
+                      <th>Transaction ID</th>
+                      <th>Battery ID</th>
+                      <th>Charging Station</th>
+                      <th>Battery Charged</th>
+                      <th>Transaction Amount</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                  {% for battery in battery_list %}
+                  {% for transaction in transaction_list %}
                     <tr>
-                      <td>{{battery.battery_SN}}</td>
-                      <td>{{battery.battery_model}}</td>
-                      <td>{{battery.battery_owner}}</td>
-                      <td>{{battery.battery_status}}</td>
+                      <td>{{transaction.id}}</td>
+                      <td>{{transaction.Battery}}</td>
+                      <td>{{transaction.Station}}</td>
+                      <td>{{transaction.battery_charged}}</td>
+                      <td>{{transaction.transaction_amount}}</td>
                     </tr>
                      {% endfor %}
                   </tbody>
